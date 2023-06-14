@@ -1,0 +1,29 @@
+//- Image
+	@param {string} name
+mixin img( name, options )
+	-
+		var size = getImageSize( name );
+		if( options && options.retina ) { size[0] = ~~(size[0]/2); size[1] = ~~(size[1]/2); }
+	img( src= procImg( name ), alt='', width= size[0], height= size[1], loading='lazy' )&attributes( attributes )
+
+//- Table body
+//- Create table body content
+mixin table-body( data )
+	tbody
+		each tr in data
+			tr
+				td= tr.name
+				td= tr.company
+				td: a.link-inherit(href="tel:#")= tr.phone
+				td: a.link-inherit(href="mailto:#")= tr.email
+				td= tr.country
+				td: span.badge( class= tr.active ? "badge__active":"badge__inactive" )= tr.active ? "Active":"Inactive"
+
+//- Navbar item
+mixin navbar-item( data )
+	li.navbar_item&attributes( attributes )
+		a.navbar_link( href='#' )
+			span.navbar_icon( class= data.iconClass )
+			span.navbar_text= data.text
+		if ( data.dropdown )
+			button.navbar_toggle.icomoon-chevron-right

@@ -1,0 +1,41 @@
+/** @section Table users */
+
+.table-users {
+	th, td {
+		&:first-child { padding-left: 0; }
+
+		&:last-child {
+			padding-right: 0;
+			text-align: center;
+		}
+	}
+
+	th {
+		padding: 9px 15px;
+		font-weight: 500;
+		color: $gray-4;
+
+		&:first-child {
+			min-width: 120px;
+		}
+	}
+
+	td {
+		padding: 9px 15px;
+		border-top: 1px solid $gray-3;
+		border-bottom: 1px solid $gray-3;
+		vertical-align: middle;
+	}
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+	.table-users {
+		th {
+			padding: 13px 10px;
+		}
+
+		td {
+			padding: 20px 10px 19px;
+		}
+	}
+}

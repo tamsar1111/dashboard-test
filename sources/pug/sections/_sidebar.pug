@@ -1,0 +1,57 @@
+aside.sidebar
+	.sidebar_mobile
+		//- Sidebar toggle
+		.sidebar_mobile-toggle
+			span
+			span
+			span
+			span
+		//- Sidebar mobile logo
+		a.logo.sidebar_logo.sidebar_logo__mobile(href="#")
+			+img('logo-inverse-217x39.png').logo_image
+
+	.sidebar_content
+		//- Sidebar desktop logo
+		a.logo.sidebar_logo(href="#")
+			+img('logo-217x39.png').logo_image
+
+		//- Sidebar navigation
+		nav.navbar.sidebar_nav
+			ul.navbar_menu
+				+navbar-item({
+					text: 'Dashboard',
+					iconClass: 'icomoon-key-square',
+				})
+				+navbar-item({
+					text: 'Product',
+					iconClass: 'icomoon-d-square',
+					dropdown: true,
+				})
+				+navbar-item({
+					text: 'Customers',
+					iconClass: 'icomoon-user-square',
+					dropdown: true,
+				}).active
+				+navbar-item({
+					text: 'Income',
+					iconClass: 'icomoon-wallet-money',
+					dropdown: true,
+				})
+				+navbar-item({
+					text: 'Promote',
+					iconClass: 'icomoon-discount-shape',
+					dropdown: true,
+				})
+				+navbar-item({
+					text: 'Help',
+					iconClass: 'icomoon-message-question',
+					dropdown: true,
+				})
+
+		//- Sidebar author
+		.author.sidebar_author
+			.author_media
+				+img("user-01-42x42").author_img
+			.author_body
+				h6.author_title Evano
+				p.author_desc Project Manager

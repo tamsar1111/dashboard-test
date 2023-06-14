@@ -1,0 +1,36 @@
+-
+	/**
+	* @desc Get the resolution of the image from its name
+	* @param {string} imgName - image name
+	* @return {Array} - image width and height
+	*/
+	function getImageSize( imgName ) {
+		var match = imgName.match( /\d+x\d+/i );
+		if ( match !== null && match.length !== 0 ) return match[0].split( 'x' );
+		else return [];
+	}
+
+	/**
+	* @desc Sets the image extension if it is missing and adds 'images/' if the link is not external
+	* @param {string} imgName - image name
+	* @return {string}
+	*/
+	function procImg( imgName ) {
+		var
+			extMatch = imgName.match( /(.jpg|.png|.gif|.svg)$/i ),
+			httpTest = /:\/\//.test( imgName );
+
+		if ( !httpTest && ( extMatch === null || extMatch.length === 0 ) ) imgName += '.jpg';
+		if ( !httpTest ) imgName = 'images/'+ imgName;
+
+		return imgName;
+	}
+
+
+	/**
+	* @desc Generates link from string
+	* @param {string} string
+	*/
+	function genLink( string ) {
+		return string.trim().replace( /\s/g, '-' ).replace( /[\(\)]/g, '' ).toLowerCase() +'.html';
+	}

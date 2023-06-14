@@ -1,0 +1,146 @@
+/** @section Sidebar */
+
+.sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+	pointer-events: none;
+
+	> * {
+		pointer-events: auto;
+	}
+
+	&.open {
+		.sidebar_content {
+			transform: translateX(0);
+		}
+	}
+}
+
+.sidebar_content {
+	width: $sidebar-width;
+	height: calc(100% - #{$sidebar-panel-height});
+	margin-top: $sidebar-panel-height;
+	overflow-y: auto;
+	padding: 30px 15px 40px;
+	display: flex;
+	flex-direction: column;
+	background-color: $white;
+	box-shadow: $box-shadow;
+	transform: translateX( -100% );
+	transition: $transition-base;
+}
+
+.sidebar_logo {
+	display: none;
+}
+
+.sidebar_logo__mobile {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.sidebar_nav {
+	margin-bottom: 20px;
+}
+
+.sidebar_author {
+	margin-top: auto;
+}
+
+.sidebar_mobile {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 11;
+	display: flex;
+	height: 50px;
+	padding: 0 15px;
+	background-color: $primary;
+	align-items: center;
+}
+
+.sidebar_mobile-toggle {
+	position: relative;
+	width: 36px;
+	height: 30px;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	cursor: pointer;
+
+	span {
+		display: block;
+		position: absolute;
+		height: 4px;
+		width: 100%;
+		background: $white;
+		border-radius: 9px;
+		opacity: 1;
+		left: 0;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+
+		&:nth-child(1) {
+			top: 0;
+		}
+
+		&:nth-child(2),
+		&:nth-child(3) {
+			top: 13px;
+		}
+
+		&:nth-child(4) {
+			top: 26px;
+		}
+	}
+
+	&.open {
+		span:nth-child(1) {
+			top: 18px;
+			width: 0;
+			left: 50%;
+		}
+
+		span {
+			&:nth-child(2) {
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+
+			&:nth-child(4) {
+				top: 18px;
+				width: 0;
+				left: 50%;
+			}
+		}
+	}
+}
+
+@media (min-width: map-get($grid-breakpoints, xl)) {
+	.sidebar_content {
+		margin-top: 0;
+		height: 100%;
+		padding: 36px 28px 76px;
+		transform: translateX( 0 );
+	}
+
+	.sidebar_mobile {
+		display: none;
+	}
+
+	.sidebar_logo {
+		display: inline-block;
+	}
+
+	.sidebar_logo__mobile {
+		display: none;
+	}
+
+	* + .sidebar_nav { margin-top: 53px; }
+}

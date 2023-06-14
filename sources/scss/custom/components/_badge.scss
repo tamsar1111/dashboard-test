@@ -1,0 +1,21 @@
+/** @section Badge */
+
+.badge {
+	display: inline-block;
+	min-width: 80px;
+	padding: 3px 7px;
+	text-align: center;
+	background-color: $gray-1;
+	border: 1px solid;
+	border-radius: 4px;
+}
+
+.badge__active {
+	color: $success;
+	background-color: rgba( $success-light, .38 );
+}
+
+.badge__inactive {
+	color: $danger;
+	background-color: $danger-light;
+}

@@ -1,0 +1,30 @@
+/** @section Author */
+
+.author {
+	display: flex;
+	align-items: center;
+}
+
+.author_media {
+	flex-shrink: 0;
+	max-width: 30%;
+	margin-right: 12px;
+}
+
+.author_img {
+	border-radius: 50%;
+}
+
+.author_body {
+	flex-grow: 1;
+}
+
+.author_title {
+	font-size: 14px;
+	color: $black;
+}
+
+.author_desc {
+	font-size: 12px;
+	letter-spacing: .01em;
+}

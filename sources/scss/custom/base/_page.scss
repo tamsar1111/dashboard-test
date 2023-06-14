@@ -1,0 +1,25 @@
+/** @section Page layout */
+
+// Page
+.page {
+	position: relative;
+	overflow: hidden;
+	min-height: 100vh;
+	padding-top: $sidebar-panel-height;
+}
+
+.main-content {
+	padding: 40px 0 60px;
+}
+
+@media (min-width: map-get($grid-breakpoints, xl)) {
+	.page {
+		padding-top: 0;
+	}
+}
+
+@media (min-width: map-get($grid-breakpoints, xl)) {
+	.page {
+		padding-left: $sidebar-width;
+	}
+}

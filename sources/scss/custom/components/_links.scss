@@ -1,0 +1,27 @@
+/** @section Links */
+
+// Standard link style
+a {
+	transition: $transition-base;
+
+	&,
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: $link-decoration;
+	}
+
+	&[href*='tel'],
+	&[href*='mailto'] {
+		white-space: nowrap;
+	}
+}
+
+.link-inherit {
+	color: inherit;
+
+	&:hover,
+	&:focus {
+		color: $primary;
+	}
+}

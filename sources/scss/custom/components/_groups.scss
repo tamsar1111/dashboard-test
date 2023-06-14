@@ -1,0 +1,7 @@
+/** @section Groups */
+
+html {
+	.group {
+		@include group(15px, 20px);
+	}
+}

@@ -1,0 +1,57 @@
+/** @section Navbar */
+
+.navbar {
+
+}
+
+.navbar_item {
+	position: relative;
+
+	&:hover,
+	&:focus,
+	&.active {
+		.navbar_link {
+			color: $white;
+			background-color: $primary;
+		}
+
+		.navbar_toggle {
+			color: $white;
+		}
+	}
+}
+
+.navbar_link {
+	display: block;
+	padding: 11px 31px 11px 11px;
+	color: $gray-5;
+	border-radius: $border-radius;
+
+	> * {
+		vertical-align: middle;
+	}
+}
+
+.navbar_icon {
+	font-size: 24px;
+	line-height: 1;
+	margin-right: 14px;
+}
+
+.navbar_item + .navbar_item { margin-top: 10px }
+
+.navbar_toggle {
+	position: absolute;
+	right: 9px;
+	top: 50%;
+	font-size: 16px;
+	color: $gray-5;
+	background: none;
+	border: none;
+	transform: translateY( -50% );
+	transition: $transition-base;
+}
+
+@media (min-width: map-get($grid-breakpoints, xl)) {
+	.navbar_item + .navbar_item { margin-top: 18px }
+}

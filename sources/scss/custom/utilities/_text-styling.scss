@@ -1,0 +1,15 @@
+/** @section Text styling */
+
+.text-primary {
+	color: $primary;
+}
+
+.text-center {
+	text-align: center;
+}
+
+@media (min-width: map-get($grid-breakpoints, md)) {
+	.text-md-left {
+		text-align: left;
+	}
+}

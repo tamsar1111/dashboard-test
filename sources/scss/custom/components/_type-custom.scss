@@ -1,0 +1,32 @@
+/** @section Typography */
+
+// Body
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-body;
+	line-height: $line-height-base;
+	font-weight: $font-weight-base;
+	letter-spacing: -.01em;
+	color: $body-color;
+	background-color: $body-bg;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+#{headings()} {
+	margin: 0;
+}
+
+.text-preview {
+	font-size: 24px;
+	color: $black;
+}
+
+mark,
+.mark {
+	padding: 2px 5px;
+	margin: 0 4px;
+	font-weight: 700;
+	color: $white;
+	border-radius: 5px;
+}
